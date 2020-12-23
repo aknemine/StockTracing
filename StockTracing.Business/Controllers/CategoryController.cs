@@ -1,16 +1,15 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using StockTracing.Business.ServicesClasses;
-using StockTracing.DataAccess.DataBaseClasses;
+using StockTracking.Business.ApiRequestClasses;
+using StockTracking.Business.ServicesClasses;
 using StockTracking.DataAccess.ApiClasses;
+using StockTracking.DataAccess.DatabaseClasses;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace StockTracing.Business.Controllers
+namespace StockTracking.Business.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -18,13 +17,11 @@ namespace StockTracing.Business.Controllers
     {
         private StockDbContext _dbContext;
         private readonly AppSettings _appSettings;
-        public CategoryController(StockDbContext dbContext,AppSettings appSettings)
-        {
-            _dbContext = dbContext;
-            _appSettings = appSettings;            
-        }
 
-        public CategoryController(StockDbContext dbContext, IOptions<AppSettings> appSettings)
+        public CategoryController(
+            StockDbContext dbContext,
+            IOptions<AppSettings> appSettings
+            )
         {
             this._dbContext = dbContext;
             this._appSettings = appSettings.Value;
@@ -35,15 +32,134 @@ namespace StockTracing.Business.Controllers
         {
             try
             {
-                var categories = await _dbContext.categories.Where(r => !r.deleted && r.type == 0).OrderBy(r => r.name).ToListAsync();
+                var categories = await _dbContext.categories
+                    .Where(r => !r.deleted && r.type == 0)
+                    .OrderBy(r => r.name)
+                    .ToListAsync();
 
                 return ApiResponseErrorType.OK.CreateResponse(categories);
             }
             catch (Exception e)
             {
                 return (e.InnerException ?? e).Message.CreateResponse();
-                
             }
         }
+
+        [HttpPost("categoryList")]
+        public async Task<ApiResponse> GetCategoryList(Pagination request =null)
+        {
+            try
+            {
+                request = request ?? new Pagination
+                {
+                    page = request.page,
+                    rowsPerPage = request.rowsPerPage
+                };
+
+                var categoryList = _dbContext.categories
+                    .Join(_dbContext.categories, c => c.Id, sc => sc.parentId, (c, sc) => new { c, sc })
+                    .Join(_dbContext.users, nc => nc.sc.editedBy, u => u.Id, (nc, u) => new { nc, u})
+                    .Where(r=> !r.u.deleted && !r.nc.sc.deleted && !r.nc.c.deleted)
+                    .OrderBy(r=>r.nc.c.name)
+                    .Select(r=>new { 
+                        categoryId=r.nc.c.Id,
+                        subCategoryId = r.nc.sc.Id,
+                        categoryName=r.nc.c.name,
+                        subCategoryName = r.nc.sc.name,
+                        lastUpdate=r.nc.sc.lastUpdate,
+                        editedBy=r.u.displayName
+                    });
+
+                var count = await categoryList.CountAsync();
+
+                var pagination = new PaginationResponse
+                {
+                    page = request.page,
+                    pageCount = (int)Math.Ceiling(count * 1.0 / request.rowsPerPage),
+                    rowCount = count,
+                    rowsPerPage = request.rowsPerPage
+                };
+                var response = await categoryList
+                    .Skip(request.rowsPerPage * (request.page - 1))
+                    .Take(request.rowsPerPage)
+                    .ToListAsync();
+
+                return pagination.CreateResponse(response);
+            }
+            catch (Exception e)
+            {
+                return (e.InnerException ?? e).Message.CreateResponse();
+            }
+        }
+
+        [HttpGet("subCategories")]
+        public async Task<ApiResponse> GetSubCategories()
+        {
+            try
+            {
+                var subCategories = await _dbContext.categories
+                    .Where(r => !r.deleted && r.type == 1)
+                    .OrderBy(r => r.name)
+                    .ToListAsync();
+
+                return ApiResponseErrorType.OK.CreateResponse(subCategories);
+            }
+            catch (Exception e)
+            {
+                return (e.InnerException ?? e).Message.CreateResponse();
+            }
+        }
+
+        [HttpGet("subCategoryList")]
+        public async Task<ApiResponse> GetSubCategoryList(Pagination request = null)
+        {
+            try
+            {
+                request = request ?? new Pagination
+                {
+                    page = request.page,
+                    rowsPerPage = request.rowsPerPage
+                };
+
+                var subCategoryList = await _dbContext.categories
+                    .Join(_dbContext.categories, c => c.Id, sc => sc.parentId, (c, sc) => new { c, sc })
+                    .Join(_dbContext.users, nc => nc.sc.editedBy, u => u.Id, (nc, u) => new { nc, u })
+                    .Where(r => !r.u.deleted && !r.nc.sc.deleted && !r.nc.c.deleted)
+                    .OrderBy(r => r.nc.c.name)
+                    .Select(r => new {
+                        categoryId = r.nc.c.Id,
+                        subCategoryId = r.nc.sc.Id,
+                        categoryName = r.nc.c.name,
+                        subCategoryName = r.nc.sc.name,
+                        lastUpdate = r.nc.sc.lastUpdate,
+                        editedBy = r.u.displayName
+                    }).ToListAsync();
+
+                return ApiResponseErrorType.OK.CreateResponse(subCategoryList);
+
+            }
+            catch (Exception e)
+            {
+                return (e.InnerException ?? e).Message.CreateResponse();
+            }
+        }
+
+        [HttpPost("saveCategory")]
+        public async Task<ApiResponse> SaveCategory(ApiCategoryRequest request)
+        {
+            try
+            {
+
+
+                return ApiResponseErrorType.OK.CreateResponse();
+            }
+            catch (Exception e)
+            {
+
+                return (e.InnerException ?? e).Message.CreateResponse();
+            }
+        }
+
+
     }
 }

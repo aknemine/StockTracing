@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace StockTracing.DataAccess.DataBaseClasses
+﻿namespace StockTracking.DataAccess.DatabaseClasses
 {
-    public class Company:LogTableBase
+    public class Company : LogTableBase
     {
         public string name { get; set; }
         public string taxNo { get; set; }

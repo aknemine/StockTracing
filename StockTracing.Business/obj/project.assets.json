@@ -2880,18 +2880,18 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
-      "StockTracing.DataAccess/1.0.0": {
+      "StockTracking.DataAccess/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.10",
           "Microsoft.EntityFrameworkCore.Relational": "3.1.10"
         },
         "compile": {
-          "bin/placeholder/StockTracing.DataAccess.dll": {}
+          "bin/placeholder/StockTracking.DataAccess.dll": {}
         },
         "runtime": {
-          "bin/placeholder/StockTracing.DataAccess.dll": {}
+          "bin/placeholder/StockTracking.DataAccess.dll": {}
         }
       }
     }
@@ -8920,10 +8920,10 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
-    "StockTracing.DataAccess/1.0.0": {
+    "StockTracking.DataAccess/1.0.0": {
       "type": "project",
-      "path": "../StockTracing.DataAccess/StockTracing.DataAccess.csproj",
-      "msbuildProject": "../StockTracing.DataAccess/StockTracing.DataAccess.csproj"
+      "path": "../StockTracing.DataAccess/StockTracking.DataAccess.csproj",
+      "msbuildProject": "../StockTracing.DataAccess/StockTracking.DataAccess.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -8933,7 +8933,7 @@
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.10",
       "Microsoft.Extensions.DependencyInjection >= 3.1.10",
       "Microsoft.Extensions.DependencyInjection.Abstractions >= 3.1.10",
-      "StockTracing.DataAccess >= 1.0.0"
+      "StockTracking.DataAccess >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -8942,9 +8942,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\StockTracing.Business.csproj",
-      "projectName": "StockTracing.Business",
-      "projectPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\StockTracing.Business.csproj",
+      "projectUniqueName": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\StockTracking.Business.csproj",
+      "projectName": "StockTracking.Business",
+      "projectPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\StockTracking.Business.csproj",
       "packagesPath": "C:\\Users\\Emine\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\obj\\",
       "projectStyle": "PackageReference",
@@ -8963,8 +8963,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj"
+            "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracking.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracking.DataAccess.csproj"
             }
           }
         }

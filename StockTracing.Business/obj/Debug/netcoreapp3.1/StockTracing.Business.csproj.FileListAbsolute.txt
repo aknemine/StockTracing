@@ -52,9 +52,6 @@ C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcore
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.AssemblyInfo.cs
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.csproj.CoreCompileInputs.cache
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\staticwebassets\StockTracing.Business.StaticWebAssets.Manifest.cache
-C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\staticwebassets\StockTracing.Business.StaticWebAssets.xml
-C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\scopedcss\bundle\StockTracing.Business.styles.css
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.RazorTargetAssemblyInfo.cache
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.csproj.CopyComplete
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.dll
@@ -63,3 +60,12 @@ C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcore
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.RazorAssemblyInfo.cache
+C:\Users\Emine\source\repos\StockTracing\StockTracing.Business\obj\Debug\netcoreapp3.1\StockTracing.Business.RazorAssemblyInfo.cs

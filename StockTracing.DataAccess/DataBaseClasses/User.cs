@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace StockTracing.DataAccess.DataBaseClasses
+namespace StockTracking.DataAccess.DatabaseClasses
 {
-    public class User : LogTableBase
+    public class User:LogTableBase
     {
         public string accountName { get; set; }
         public string password { get; set; }
@@ -17,9 +15,8 @@ namespace StockTracing.DataAccess.DataBaseClasses
         public Guid companyId { get; set; }
         public string department { get; set; }
         public string thumbnailPhoto { get; set; }
-        public DateTime birthOfDate { get; set; }
+        public DateTime birtOfDate { get; set; }
         public bool genus { get; set; }
         public int authorityLevel { get; set; }
-        
     }
 }

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Data;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace StockTracking.DataAccess.ApiClasses
 {
     public class ApiResponse
     {
         public ApiResponseError error { get; set; }
+
         public ApiResponse()
         {
             this.error = ApiResponseErrorType.OK.CreateResponseError();
@@ -22,11 +25,11 @@ namespace StockTracking.DataAccess.ApiClasses
             this.error = error;
         }
     }
-    
+
     public class PaginationResponse : Pagination
     {
         public int rowCount { get; set; }
-        public int pagecount { get; set; }
+        public int pageCount { get; set; }
     }
 
     public class ApiResponse<T> : ApiResponse

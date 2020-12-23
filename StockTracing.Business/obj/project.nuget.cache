@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "r0JgyvUIJoIAtznj6KLXakn/NeoJshBh79TPzBWbXq/5i8GfaL0XWCmGkSC/MO777BaOfg/XLZ82pAUxsk246A==",
+  "dgSpecHash": "zYBCJIAYJJS9NDJWxCv9zJx1Dg5RRT+KF/9niB8HCrtTLu3m7nNNcX/0tpoUttRArPC6esRi7BJw6tUsfij/jQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\StockTracing.Business.csproj",
+  "projectFilePath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.Business\\StockTracking.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

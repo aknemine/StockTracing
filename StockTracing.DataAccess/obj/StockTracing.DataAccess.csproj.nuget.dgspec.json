@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj": {}
+    "C:\\Users\\Teknar\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj": {
+    "C:\\Users\\Teknar\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Teknar\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj",
         "projectName": "StockTracing.DataAccess",
-        "projectPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj",
-        "packagesPath": "C:\\Users\\Emine\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\obj\\",
+        "projectPath": "C:\\Users\\Teknar\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\Teknar\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Teknar\\source\\repos\\StockTracing\\StockTracing.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Emine\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Teknar\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace StockTracing.DataAccess.DataBaseClasses
+namespace StockTracking.DataAccess.DatabaseClasses
 {
     public class Stock : LogTableBase
     {
@@ -16,10 +14,8 @@ namespace StockTracing.DataAccess.DataBaseClasses
         public Guid deliveryPerson { get; set; }
         public DateTime date { get; set; }
         public bool? confirmStatus { get; set; }
-        public Guid comfirmById { get; set; }
+        public Guid confirmById { get; set; }
         public DateTime confirmDate { get; set; }
         public string confirmNote { get; set; }
-
-
     }
 }

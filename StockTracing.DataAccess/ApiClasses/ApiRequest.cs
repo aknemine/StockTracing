@@ -2,21 +2,19 @@
 {
     public class Pagination
     {
-        public int Page { get; set; }
-        public int RowsPerPage { get; set; }
+        public int page { get; set; }
+        public int rowsPerPage { get; set; }
     }
-
     public class ApiRequest
     {
     }
-
     public class PaginatedApiRequest : ApiRequest
     {
-        public Pagination Pagination { get; set; }
+        public Pagination pagination { get; set; }
     }
 
     public class PaginatedApiRequest<T> : PaginatedApiRequest
     {
-        public T Data { get; set; }
+        public T data { get; set; }
     }
 }

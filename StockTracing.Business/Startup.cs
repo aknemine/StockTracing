@@ -7,14 +7,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using StockTracing.Business.ServicesClasses;
-using StockTracing.DataAccess.DataBaseClasses;
+using StockTracking.Business.ServicesClasses;
+using StockTracking.DataAccess.DatabaseClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace StockTracing.Business
+namespace StockTracking.Business
 {
     public class Startup
     {
@@ -28,19 +29,20 @@ namespace StockTracing.Business
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<StockDbContext>(o=> {
-                o.UseSqlServer(Configuration.GetConnectionString("StockTracing"));
+            services.AddDbContext<StockDbContext>(o => {
+                o.UseSqlServer(Configuration.GetConnectionString("StockTracking"));
             });
 
             services.AddHttpContextAccessor();
 
-            services.AddMvc().AddNewtonsoftJson(o=> {
-                o.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+            services.AddMvc().AddNewtonsoftJson(O => {
+                O.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
             });
 
-            var appSettingSection = Configuration.GetSection("AppSettings");
-            services.Configure<AppSettings>(appSettingSection);
+            var appSettingsSection = Configuration.GetSection("AppSettings");
+            services.Configure<AppSettings>(appSettingsSection);
             services.AddSingleton(Configuration);
+
             services.AddControllers().AddNewtonsoftJson();
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iVQL2uIWKSu+DzfnoeuRaJSS7ERWoWkePNGVLFtuUkA4g6qdMyE0XzWoeq5Z5u+KziiDXNPxG6ZyFjUIt66nyQ==",
+  "dgSpecHash": "nx5UUEULDYUHlx2ZuOL0xzHfDyalSlrhj0SwjRrQODBkWFNEt8+5iyMp90ICSnQ4o1IPpcys5ONkiO85AqJa5A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracing.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Emine\\source\\repos\\StockTracing\\StockTracing.DataAccess\\StockTracking.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
@@ -21,8 +21,6 @@
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\3.1.10\\microsoft.extensions.logging.abstractions.3.1.10.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.extensions.options\\3.1.10\\microsoft.extensions.options.3.1.10.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.10\\microsoft.extensions.primitives.3.1.10.nupkg.sha512",
-    "C:\\Users\\Emine\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
-    "C:\\Users\\Emine\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\system.collections.immutable\\1.7.1\\system.collections.immutable.1.7.1.nupkg.sha512",
     "C:\\Users\\Emine\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",

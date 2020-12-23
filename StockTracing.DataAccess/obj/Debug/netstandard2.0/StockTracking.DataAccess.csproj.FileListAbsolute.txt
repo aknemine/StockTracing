@@ -1,0 +1,9 @@
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\bin\Debug\netstandard2.0\StockTracking.DataAccess.deps.json
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\bin\Debug\netstandard2.0\StockTracking.DataAccess.dll
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\bin\Debug\netstandard2.0\StockTracking.DataAccess.pdb
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\obj\Debug\netstandard2.0\StockTracking.DataAccess.csprojAssemblyReference.cache
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\obj\Debug\netstandard2.0\StockTracking.DataAccess.AssemblyInfoInputs.cache
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\obj\Debug\netstandard2.0\StockTracking.DataAccess.AssemblyInfo.cs
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\obj\Debug\netstandard2.0\StockTracking.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\obj\Debug\netstandard2.0\StockTracking.DataAccess.dll
+C:\Users\Teknar\source\repos\StockTracing\StockTracing.DataAccess\obj\Debug\netstandard2.0\StockTracking.DataAccess.pdb
