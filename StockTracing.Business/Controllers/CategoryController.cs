@@ -149,7 +149,50 @@ namespace StockTracking.Business.Controllers
         {
             try
             {
+                var category = await _dbContext.categories.SingleOrDefaultAsync(r => !r.deleted && r.Id == request.Id);
 
+                if (category==null)
+                {
+                    category = new Category
+                    {
+                        //createdBy=authService.UserClaims.id,
+                        deleted = request.Deleted,
+                        //editedBy=authService.UserClaims.id,
+                        Id = Guid.NewGuid(),
+                        lastUpdate = DateTime.Now,
+                        name=request.Name,
+                        parentId=request.Type==0 ? Guid.Empty : request.ParentId,
+                        type=request.Type
+                    };
+                    _dbContext.Entry(category).State = EntityState.Added;
+                }
+                else
+                {
+                    category.deleted = request.Deleted;
+                    category.name = request.Name;
+                    //category.editedBy = authService.UserClaims.id;
+                    category.parentId = request.ParentId;
+                    category.type = request.Type;
+                    category.lastUpdate = DateTime.Now;
+
+                    _dbContext.Entry(category).State = EntityState.Modified;
+
+                    if (request.Type==0 && request.Deleted == true)
+                    {
+                        var subCatergory = await _dbContext.categories.Where(r => !r.deleted && r.type == 1 && r.parentId == request.Id).ToArrayAsync();
+
+                        foreach (var item in subCatergory)
+                        {
+                            item.deleted = true;
+                            //item.editedBy=authService.UserClaims.id;
+                            item.lastUpdate = DateTime.Now;
+
+                            _dbContext.Entry(item).State = EntityState.Modified;
+                        }
+                    }
+                }
+
+                await _dbContext.SaveChangesAsync();
 
                 return ApiResponseErrorType.OK.CreateResponse();
             }
