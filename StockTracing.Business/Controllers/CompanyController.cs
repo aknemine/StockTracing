@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using StockTracking.Business.ApiRequestClasses;
 using StockTracking.Business.ServicesClasses;
 using StockTracking.DataAccess.ApiClasses;
 using StockTracking.DataAccess.DatabaseClasses;
@@ -125,6 +126,54 @@ namespace StockTracking.Business.Controllers
                 }).ToListAsync();
 
                 return ApiResponseErrorType.OK.CreateResponse(companyUserList);
+            }
+            catch (Exception e)
+            {
+                return (e.InnerException ?? e).Message.CreateResponse();
+            }
+        }
+
+        [HttpPost("saveCompany")]
+        public async Task<ApiResponse> SaveCompany(ApiCompanyRequest request)
+        {
+            try
+            {
+                var company = await _dbContext.companies.SingleOrDefaultAsync(r => !r.deleted && r.Id == request.Id);
+
+                if (company==null)
+                {
+                    company = new Company
+                    {
+                        address = request.Address,
+                        //createdBy = authService.UserClaims.objectSID,
+                        createdDate = DateTime.Now,
+                        deleted = request.Deleted,
+                        //editedBy = authService.UserClaims.objectSID,
+                        eMail = request.Eposta,
+                        Id = Guid.NewGuid(),
+                        lastUpdate = DateTime.Now,
+                        name = request.Name,
+                        phone = request.Phone,
+                        taxNo = request.TaxNo,
+                        webSite = request.WebSite,
+                        isShipping = request.IsShipping
+                    };
+                }
+                else
+                {
+                    company.address = request.Address;
+                    company.deleted = request.Deleted;
+                    //company.editedBy = authService.UserClaims.objectSID;
+                    company.eMail = request.Eposta;
+                    company.lastUpdate = DateTime.Now;
+                    company.name = request.Name;
+                    company.phone = request.Phone;
+                    company.taxNo = request.TaxNo;
+                    company.webSite = request.WebSite;
+                    company.isShipping = request.IsShipping;
+                }
+                await _dbContext.SaveChangesAsync();
+                return ApiResponseErrorType.OK.CreateResponse();
             }
             catch (Exception e)
             {
